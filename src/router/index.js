@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Guidelines from '../views/Guidelines'
 import graph_test from '../views/graph_test.vue'
 import AppHeader from "../layout/AppHeader"
 
@@ -16,6 +17,14 @@ const routes = [
       },
     props : true
   },
+    {
+        path: '/guidelines',
+        name: 'Guidelines',
+        components: {
+            header: AppHeader,
+            default: Guidelines,
+        }
+    },
   {
     path: '/graph_test',
     name: graph_test,
