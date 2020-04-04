@@ -114,13 +114,6 @@ export default {
 .padded {
   padding: 10px 10px;
 }
-
-.input-message{
-  width : 60%;
-  margin : 0 auto;
-  min-height : 40px;
-
-}
 .my-radio{
   padding: 5px 5px;
   margin: 10px 10px;
@@ -133,7 +126,7 @@ export default {
 .box {
   width: 80%;
   margin: 25px auto;
-  background: #1acfa2;
+  background: #06beb6;
   padding: 10px;
   text-align: center;
   font-weight: 900;
@@ -143,7 +136,7 @@ export default {
 }
 
 .person-message {
-  background : #C8C8C8;
+  background : #c8c8c8;
 }
 
 .sb3:before {
@@ -151,9 +144,9 @@ export default {
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 10px solid #1acfa2;
+  border-left: 10px solid #06beb6;
   border-right: 10px solid transparent;
-  border-top: 10px solid #1acfa2;
+  border-top: 10px solid #06beb6;
   border-bottom: 10px solid transparent;
   left: 19px;
   bottom: -19px;
