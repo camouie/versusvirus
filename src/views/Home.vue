@@ -120,13 +120,13 @@ export default {
 }
 .chatbot-container {
   overflow:scroll;
-  height:400px;
+  height:420px;
 }
 
 .box {
   width: 80%;
   margin: 25px auto;
-  background: #06beb6;
+  background: #086788;
   padding: 10px;
   text-align: center;
   font-weight: 900;
@@ -136,7 +136,7 @@ export default {
 }
 
 .person-message {
-  background : #c8c8c8;
+  background : #069fc2;
 }
 
 .sb3:before {
@@ -144,9 +144,9 @@ export default {
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 10px solid #06beb6;
+  border-left: 10px solid #086788;
   border-right: 10px solid transparent;
-  border-top: 10px solid #06beb6;
+  border-top: 10px solid #086788;
   border-bottom: 10px solid transparent;
   left: 19px;
   bottom: -19px;
@@ -158,8 +158,8 @@ export default {
   height: 0px;
   position: absolute;
   border-left: 10px solid transparent;
-  border-right: 10px solid #C8C8C8;
-  border-top: 10px solid #C8C8C8;
+  border-right: 10px solid #069fc2;
+  border-top: 10px solid #069fc2;
   border-bottom: 10px solid transparent;
   right: 19px;
   bottom: -19px;

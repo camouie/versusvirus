@@ -4,7 +4,7 @@
 
 .profile-page {
     .card-profile {
-        margin-top: -150px;
+        margin-top: -400px;
 
         .card-profile-image {
             position: relative;
@@ -56,7 +56,7 @@
         @include media-breakpoint-down(xs) {
             .card-profile-actions {
                 margin-top: 110px;
-            } 
+            }
         }
 
         @include media-breakpoint-between(sm, md) {
