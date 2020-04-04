@@ -20,8 +20,15 @@
                         <div class="chatbot-container">
                           <div v-for="item in dialog" v-bind:key="item.message">
                             <p :class=item.class> {{item.message}}</p>
+                            <div v-if="item.id > 1 && item.id < 7">
+                              <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)"/>Yes, I did.
+
+                              <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)" />I don't know.
+
+                              <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)" />No !
                           </div>
-                          <InputNews v-on:addMessage="addMessageToDialog"/>
+                          </div>
+                          <InputNews v-on:addMessage="addMessageToDialog" v-bind:enabled="inputEnabled"/>
                         </div>
                         <!-- end of content -->
                       </div>
@@ -44,29 +51,49 @@ export default {
       cpt : 1,
       dialog : [],
       botDialogs : [
-        { message : "Hello, before checking your news to see whether it's trustable or not, please answer some questions for me.", class : "chat-bot" },
-        { message : "Did you check the source of information ?", class : "chat-bot" },
-        { message : "Did you check the spelling and grammar ?", class : "chat-bot" },
-        { message : "Did you check the author ?", class : "chat-bot" },
-        { message : "Did you check the type of media (who is publishing) ?", class : "chat-bot" },
+        { id: 1, message : "Hello, before checking your news to see whether it's trustable or not, please answer this 5 questions for me.", class : "chat-bot" },
+        { id: 2, message : "Did you check the source of information ?", class : "chat-bot" },
+        { id: 3, message : "Did you check the spelling and grammar ?", class : "chat-bot" },
+        { id: 4, message : "Did you check the author ?", class : "chat-bot" },
+        { id: 5, message : "Did you check the type of media (who is publishing) ?", class : "chat-bot" },
         //{ message : "Did you check date & time ?", class : "chat-bot" },
-        { message : "Did you check the domain name (.com.co // .org //) ?", class : "chat-bot" },
+        { id: 6, message : "Did you check the domain name (.com.co // .org //) ?", class : "chat-bot" },
+        { id: 7, message : "Thank you.", class : "chat-bot" },
+        { id: 8, message : "You can now copy/paste the news you want me to check.", class : "chat-bot" },
+
       ],
+      inputEnabled: false,
     }
   },
   methods : {
     addMessageToDialog (text) {
       this.dialog.push(text);
-      this.cpt += 1;
-      if(this.cpt < this.botDialogs.length){
-        this.dialog.push(this.botDialogs[this.cpt]);
+      //this.cpt += 1;
+      //if(this.cpt < this.botDialogs.length){
+        //this.dialog.push(this.botDialogs[this.cpt]);
+      //}
+    },
+    nextQuestion (id) {
+      var contains = this.dialog.filter(it => it.id == id+1).length;
+      if(contains == 0){
+        this.dialog.push(this.botDialogs[id]);
+        this.cpt += 1;
       }
     }
   },
   created () {
     this.dialog.push(this.botDialogs[0]);
     this.dialog.push(this.botDialogs[1]);
+  },
+  watch: {
+    cpt () {
+      if (this.cpt == 6){
+      this.dialog.push(this.botDialogs[7]);
+      this.inputEnabled = true;
+    }
+    }
   }
+
 }
 </script>
 
@@ -86,5 +113,9 @@ export default {
   width : 60%;
   margin : 0 auto;
   min-height : 40px;
+}
+.my-radio{
+  padding: 5px 5px;
+  margin: 10px 10px;
 }
 </style>
