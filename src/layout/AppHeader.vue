@@ -24,7 +24,7 @@
                   </router-link>
                 </div>
                 <div tag="li" class="nav-item">
-                  <router-link slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button" to="/">
+                  <router-link slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button" to="/guidelines">
                         <i class="ni ni-collection d-lg-none"></i>
                         <span class="nav-link-inner--text">General Guidelines</span>
                   </router-link>
