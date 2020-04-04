@@ -17,19 +17,21 @@
                   <div class="px-4">
                       <div class="row justify-content-center">
                         <!-- content -->
-                        <div class="chatbot-container">
+                        <transition name="fade">
+                        <div class="chatbot-container" ref="chatContainer">
                           <div v-for="item in dialog" v-bind:key="item.message">
-                            <p :class=item.class> {{item.message}}</p>
+                            <div :class="item.class == 'chat-bot' ? 'box sb3' : 'box sb4 person-message'"><p> {{item.message}} </p></div>
                             <div v-if="item.id > 1 && item.id < 7">
                               <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)"/>Yes, I did.
 
                               <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)" />I don't know.
 
                               <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)" />No !
-                          </div>
+                            </div>
                           </div>
                           <InputNews v-on:addMessage="addMessageToDialog" v-bind:enabled="inputEnabled"/>
                         </div>
+                      </transition>
                         <!-- end of content -->
                       </div>
                   </div>
@@ -62,7 +64,7 @@ export default {
         { id: 8, message : "You can now copy/paste the news you want me to check.", class : "chat-bot" },
 
       ],
-      inputEnabled: false,
+      inputEnabled:false,
     }
   },
   methods : {
@@ -87,12 +89,16 @@ export default {
   },
   watch: {
     cpt () {
-      if (this.cpt == 6){
-      this.dialog.push(this.botDialogs[7]);
-      this.inputEnabled = true;
-    }
-    }
-  }
+      if (this.cpt == 6) {
+        this.dialog.push(this.botDialogs[7]);
+        this.inputEnabled = true;
+      }
+    },
+  },
+  updated: function(){
+    var container = this.$refs.chatContainer;
+    container.scrollTop = container.scrollHeight;
+  },
 
 }
 </script>
@@ -113,9 +119,61 @@ export default {
   width : 60%;
   margin : 0 auto;
   min-height : 40px;
+
 }
 .my-radio{
   padding: 5px 5px;
   margin: 10px 10px;
 }
+.chatbot-container {
+  overflow:scroll;
+  height:400px;
+}
+
+.box {
+  width: 80%;
+  margin: 25px auto;
+  background: #1acfa2;
+  padding: 10px;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-family: arial;
+  position: relative;
+}
+
+.person-message {
+  background : #C8C8C8;
+}
+
+.sb3:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid #1acfa2;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #1acfa2;
+  border-bottom: 10px solid transparent;
+  left: 19px;
+  bottom: -19px;
+}
+
+.sb4:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid #C8C8C8;
+  border-top: 10px solid #C8C8C8;
+  border-bottom: 10px solid transparent;
+  right: 19px;
+  bottom: -19px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 1s;
+}
+
 </style>
