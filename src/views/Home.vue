@@ -20,7 +20,7 @@
                         <transition name="fade">
                         <div class="chatbot-container" ref="chatContainer">
                           <div v-for="item in dialog" v-bind:key="item.message">
-                            <div :class="item.class == 'chat-bot' ? 'box sb3' : 'box sb4 person-message'"><p> {{item.message}} </p></div>
+                            <div :class="item.class"><p> {{item.message}} </p></div>
                             <div v-if="item.id > 1 && item.id < 7">
                               <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)"/>Yes, I did.
 
@@ -34,6 +34,7 @@
                       </transition>
                         <!-- end of content -->
                       </div>
+
                   </div>
               </card>
           </div>
@@ -43,6 +44,8 @@
 
 <script>
 import InputNews from '../components/InputNews';
+import axios from 'axios';
+
 export default {
   name: 'Home',
   components: {
@@ -53,27 +56,26 @@ export default {
       cpt : 1,
       dialog : [],
       botDialogs : [
-        { id: 1, message : "Hello, before checking your news to see whether it's trustable or not, please answer this 5 questions for me.", class : "chat-bot" },
-        { id: 2, message : "Did you check the source of information ?", class : "chat-bot" },
-        { id: 3, message : "Did you check the spelling and grammar ?", class : "chat-bot" },
-        { id: 4, message : "Did you check the author ?", class : "chat-bot" },
-        { id: 5, message : "Did you check the type of media (who is publishing) ?", class : "chat-bot" },
+        { id: 1, message : "Hello, before checking your news to see whether it's trustable or not, please answer this 5 questions for me.", class : "box sb3" },
+        { id: 2, message : "Did you check the source of information ?", class : "box sb3" },
+        { id: 3, message : "Did you check the spelling and grammar ?", class : "box sb3" },
+        { id: 4, message : "Did you check the author ?", class : "box sb3" },
+        { id: 5, message : "Did you check the type of media (who is publishing) ?", class : "box sb3" },
         //{ message : "Did you check date & time ?", class : "chat-bot" },
-        { id: 6, message : "Did you check the domain name (.com.co // .org //) ?", class : "chat-bot" },
-        { id: 7, message : "Thank you.", class : "chat-bot" },
-        { id: 8, message : "You can now copy/paste the news you want me to check.", class : "chat-bot" },
+        { id: 6, message : "Did you check the domain name (.com.co // .org //) ?", class : "box sb3" },
+        { id: 7, message : "Thank you.", class : "box sb3" },
+        { id: 8, message : "You can now copy/paste the news you want me to check.", class : "box sb3" },
 
       ],
       inputEnabled:false,
+      info : null,
+      confidenceMessage: "",
     }
   },
   methods : {
     addMessageToDialog (text) {
       this.dialog.push(text);
-      //this.cpt += 1;
-      //if(this.cpt < this.botDialogs.length){
-        //this.dialog.push(this.botDialogs[this.cpt]);
-      //}
+      this.isItFake(text);
     },
     nextQuestion (id) {
       var contains = this.dialog.filter(it => it.id == id+1).length;
@@ -81,7 +83,22 @@ export default {
         this.dialog.push(this.botDialogs[id]);
         this.cpt += 1;
       }
-    }
+    },
+    isItFake (message) {
+      axios.post(`http://datasemlab.ch:5310/sams/api/detect`, {
+        text : message.message
+      })
+      .then(response => {
+        console.log(response);
+        var prob = response.data.OK.probability * 100;
+        prob > 90 ? this.confidenceMessage = "very confident" : prob > 70 ? this.confidenceMessage = "pretty confident" : this.confidenceMessage = "not very sure";
+        var responseToAdd = { message : "So...with a propability of " + response.data.OK.probability * 100 + "%, I can say that I am " + this.confidenceMessage +" that it is " + response.data.OK.class + ".", class : "box sb3 "+ response.data.OK.class}
+        this.dialog.push(responseToAdd);
+      })
+      .catch(e => {
+        this.errors.push(e)
+      })
+    },
   },
   created () {
     this.dialog.push(this.botDialogs[0]);
@@ -153,6 +170,14 @@ export default {
   background : #069fc2;
 }
 
+.False{
+  background : #f5365c;
+}
+
+.Real {
+  background : #2dce89;
+}
+
 .sb3:before {
   content: "";
   width: 0px;
@@ -165,7 +190,14 @@ export default {
   left: 19px;
   bottom: -19px;
 }
-
+.sb3.Real:before {
+  border-left: 10px solid #2dce89;
+  border-top: 10px solid #2dce89;
+}
+.sb3.False:before {
+  border-left: 10px solid #f5365c;
+  border-top: 10px solid #f5365c;
+}
 .sb4:before {
   content: "";
   width: 0px;

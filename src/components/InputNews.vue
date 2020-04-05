@@ -2,7 +2,7 @@
   <div>
     <div><textarea class="input-message form-control" v-model="value" placeholder="Copy/paste your text to be checked..." :disabled="!this.enabled"/></div>
     <div class="mt-3">
-      <base-button type="danger" size="sm" class="mb-4" @click="$emit('addMessage', {message : value, class : 'input-message'}), clear()"> Send </base-button>
+      <base-button type="danger" size="sm" class="mb-4" @click="$emit('addMessage', {message : value, class : 'box sb4 person-message'}), clear()"> Send </base-button>
     </div>
   </div>
 </template>

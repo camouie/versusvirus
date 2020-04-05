@@ -7,11 +7,14 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faRobot, faSearchLocation,  faUserEdit, faFileAlt, faSpellCheck} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+window.axios = require('axios');
+
 library.add(faRobot, faSearchLocation, faUserEdit, faFileAlt, faSpellCheck)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.use(Argon)
+
 
 new Vue({
   router,
