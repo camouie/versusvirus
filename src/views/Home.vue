@@ -64,7 +64,7 @@
           {
             id: 1,
             message:
-              "Hello, before checking your news to see whether it's trustable or not, please answer these 5 questions for me.",
+              "Hello, before checking your news to see whether it's trustable or not, please answer these 4 questions for me.",
             class: 'box sb3'
           },
           { id: 2, message: 'Did you check the source of information ?', class: 'box sb3' },
