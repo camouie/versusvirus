@@ -85,7 +85,4 @@
     };
 </script>
 <style>
-/*
-        background : #069fc2;
-        border-left: 10px solid #086788;*/
 </style>

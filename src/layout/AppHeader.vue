@@ -20,14 +20,20 @@
                 <div class="nav-item" menu-classes="dropdown-menu-xl">
                   <router-link slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button" to="/">
                         <i class="ni ni-ui-04 d-lg-none"></i>
-                        <span class="nav-link-inner--text">Vs Faker</span>
+                        <span class="nav-link-inner--text">Tool</span>
                   </router-link>
                 </div>
                 <div tag="li" class="nav-item">
                   <router-link slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button" to="/guidelines">
                         <i class="ni ni-collection d-lg-none"></i>
-                        <span class="nav-link-inner--text">General Guidelines</span>
+                        <span class="nav-link-inner--text">Guidelines</span>
                   </router-link>
+                </div>
+                <div tag="li" class="nav-item">
+                    <router-link slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button" to="/about">
+                        <i class="ni ni-collection d-lg-none"></i>
+                        <span class="nav-link-inner--text">About</span>
+                    </router-link>
                 </div>
             </ul>
         </base-nav>
