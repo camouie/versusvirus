@@ -1,0 +1,17 @@
+{   "postgresdb": {
+        "server": "",
+        "port": "",
+        "username": "",
+        "database": "",
+        "password": ""
+    },
+    "api_url": "http://ip:5310/sams/api/",
+    "data": {
+      "train": "data/training-set.csv",
+      "test": "data/testing-set.csv",
+      "dataset": "data/dataset.csv",
+      "debunking_dataset": "data/fakenewsdebunking_data.xlsx",
+      "model": "nne"
+    }
+}
+
