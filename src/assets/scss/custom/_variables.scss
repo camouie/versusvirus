@@ -68,7 +68,7 @@ $colors: map-merge((
 ), $colors);
 
 $default:       #172b4d !default;
-$primary:       #5e72e4 !default;
+$primary:       #086788  !default;
 $secondary:     #f4f5f7 !default;
 $success:       $green !default;
 $info:          $teal !default;
@@ -701,7 +701,7 @@ $list-group-item-padding-x:         1rem !default;
 
 $list-group-hover-bg:               $gray-100 !default;
 $list-group-active-color:           $component-active-color !default;
-$list-group-active-bg:              $component-active-bg !default;
+$list-group-active-bg:              #086788 !default;
 $list-group-active-border-color:    $list-group-active-bg !default;
 
 $list-group-disabled-color:         $gray-600 !default;
@@ -736,7 +736,7 @@ $popover-border-radius:             $border-radius-lg !default;
 $popover-box-shadow:                0px .5rem 2rem 0px rgba($black, .2);
 
 $popover-header-bg:                 $popover-bg !default;
-$popover-header-color:              $headings-color !default;
+$popover-header-color:              #086788  !default;
 $popover-header-padding-y:          .75rem !default;
 $popover-header-padding-x:          .75rem !default;
 
