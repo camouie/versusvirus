@@ -93,6 +93,9 @@ export default {
         var prob = response.data.OK.probability * 100;
         prob > 90 ? this.confidenceMessage = "very confident" : prob > 70 ? this.confidenceMessage = "pretty confident" : this.confidenceMessage = "not very sure";
         var responseToAdd = { message : "So...with a propability of " + response.data.OK.probability * 100 + "%, I can say that I am " + this.confidenceMessage +" that it is " + response.data.OK.class + ".", class : "box sb3 "+ response.data.OK.class}
+        //http://datasemlab.ch:5310/sams/api/recommend
+        //var responseToAdd = { message : response.data.OK.doc + ".", class : "box sb3 "+ response.data.OK.class}
+
         this.dialog.push(responseToAdd);
       })
       .catch(e => {
@@ -171,7 +174,7 @@ export default {
 }
 
 .False{
-  background : #f5365c;
+  background : #FF0000;
 }
 
 .Real {
@@ -195,8 +198,8 @@ export default {
   border-top: 10px solid #2dce89;
 }
 .sb3.False:before {
-  border-left: 10px solid #f5365c;
-  border-top: 10px solid #f5365c;
+  border-left: 10px solid #FF0000;
+  border-top: 10px solid #FF0000;
 }
 .sb4:before {
   content: "";
