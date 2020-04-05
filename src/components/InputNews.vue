@@ -20,7 +20,7 @@ export default {
   data () {
     return {
     value : '',
-    info : 'Please provide at least a 50 characters.'
+    info : 'Please provide at least 50 characters.'
   }
 },
 methods : {
