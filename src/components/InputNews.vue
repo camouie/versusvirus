@@ -1,7 +1,7 @@
 <template>
   <div>
     <div><textarea class="input-message form-control" v-model="value" placeholder="Copy/paste your text to be checked..." :disabled="!this.enabled"/></div>
-    <p v-if="value.length < 50" class="alert alert-danger mt-3 sized">{{info}}</p>
+    <p v-if="value.length < 50 && this.enabled" class="alert alert-danger mt-3 sized">{{info}}</p>
     <div class="mt-3">
       <base-button type="danger" size="sm" class="mb-4" @click="$emit('addMessage', {message : value, class : 'box sb4 person-message'}), clear()" :disabled="!this.enabled || value.length < 20"> Send </base-button>
     </div>
