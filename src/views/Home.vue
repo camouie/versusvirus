@@ -113,7 +113,7 @@
               : (this.confidenceMessage = 'not very sure')
             var responseToAdd = {
               message:
-                'So...with a propability of ' +
+                'So...with a probability of ' +
                 response.data.OK.probability * 100 +
                 '%, I can say that I am ' +
                 this.confidenceMessage +
@@ -150,12 +150,12 @@
               var url = response.data.OK.url
               recommandation = {
                 message:
-                  "I found an article debunking a news similar to yours : <br /> Title : <strong>" +
+                  "I found an article debunking a news similar to yours : <br /><br /> <div class='bold'>Title :</div> " +
                   title +
-                  "<br /> Why it's fake : "+
+                  "<br /> <div class='bold'>Why it's fake : </div>"+
                     explanation
                   +
-                  "</strong><br /><a class='link-special' target='_blank' href='" +
+                  "<br /><a class='link-special' target='_blank' href='" +
                   url +
                   "'>Read more</a>",
                 class: 'box sb3'
@@ -192,7 +192,9 @@
 </script>
 
 <style>
-
+  .bold {
+    font-weight: bold;
+  }
   .link-special {
     color: #ffffff !important;
     font-weight: bold;
