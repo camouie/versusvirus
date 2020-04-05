@@ -13,10 +13,10 @@
         </section>
         <section class="section section-skew">
             <div class="container">
-                <card shadow class="card-profile mt--300" no-body>
+                <card shadow class="card-profile mt--300" no-body mb-5>
                   <h1 class="pt-2">Guidelines</h1>
                     <div class="px-4">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center mb-3">
                             <!-- content -->
                                     <div class="col-lg-9">
                                         <div style="text-align: left">

@@ -16,7 +16,7 @@
                 <card shadow class="card-profile mt--300" no-body>
                     <h1 class="pt-2">How our tool works</h1>
                     <div class="px-4">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center mb-3">
                             <!-- content -->
                             <div class="col-lg-9">
                                 <div style="text-align: left">
