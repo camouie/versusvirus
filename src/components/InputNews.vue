@@ -1,8 +1,9 @@
 <template>
   <div>
     <div><textarea class="input-message form-control" v-model="value" placeholder="Copy/paste your text to be checked..." :disabled="!this.enabled"/></div>
+    <p v-if="value.length < 50" class="alert alert-danger mt-3 sized">{{info}}</p>
     <div class="mt-3">
-      <base-button type="danger" size="sm" class="mb-4" @click="$emit('addMessage', {message : value, class : 'box sb4 person-message'}), clear()"> Send </base-button>
+      <base-button type="danger" size="sm" class="mb-4" @click="$emit('addMessage', {message : value, class : 'box sb4 person-message'}), clear()" :disabled="!this.enabled || value.length < 20"> Send </base-button>
     </div>
   </div>
 </template>
@@ -18,7 +19,8 @@ export default {
   props: ['enabled'],
   data () {
     return {
-    value : ''
+    value : '',
+    info : 'Please provide at least a 50 characters.'
   }
 },
 methods : {
@@ -30,9 +32,13 @@ methods : {
 }
 </script>
 <style>
-.input-message{
+.input-message {
   width : 80% !important;
   margin : 0 auto;
   min-height : 40px;
+}
+.sized {
+  width : 80% !important;
+  margin : 0 auto;
 }
 </style>
