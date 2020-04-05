@@ -111,19 +111,19 @@ export default {
   border-radius: 15px;
   padding: 10px 10px;
 }
+
 .padded {
   padding: 10px 10px;
 }
+
 .my-radio{
   padding: 5px 5px;
   margin: 10px 10px;
 }
+
 .chatbot-container {
   overflow:scroll;
   height:500px;
-}
-.profile-page .card-profile {
-
 }
 
 .card.card-profile{
