@@ -7,7 +7,7 @@
 
             <div class="row" slot="content-header" slot-scope="{closeMenu}">
                 <div class="col-6 collapse-brand">
-                    <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
+                    <a href="">
                         <img src="img/sams.png">
                     </a>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="nav-item" menu-classes="dropdown-menu-xl">
                   <router-link slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button" to="/">
                         <i class="ni ni-ui-04 d-lg-none"></i>
-                        <span class="nav-link-inner--text">Tool</span>
+                        <span class="nav-link-inner--text">SAMS</span>
                   </router-link>
                 </div>
                 <div tag="li" class="nav-item">
@@ -32,7 +32,7 @@
                 <div tag="li" class="nav-item">
                     <router-link slot="title" href="#" class="nav-link" data-toggle="dropdown" role="button" to="/about">
                         <i class="ni ni-collection d-lg-none"></i>
-                        <span class="nav-link-inner--text">About</span>
+                        <span class="nav-link-inner--text">What is SAMS</span>
                     </router-link>
                 </div>
             </ul>
