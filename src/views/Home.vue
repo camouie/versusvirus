@@ -64,7 +64,7 @@
           {
             id: 1,
             message:
-              "Hello, before checking your news to see whether it's trustable or not, please answer this 5 questions for me.",
+              "Hello, before checking your news to see whether it's trustable or not, please answer these 5 questions for me.",
             class: 'box sb3'
           },
           { id: 2, message: 'Did you check the source of information ?', class: 'box sb3' },
@@ -145,18 +145,19 @@
               recommandation = { message: text, class: 'box sb3' }
             } else {
               var explanation = response.data.OK.explanation
-              var prob = response.data.OK.probability * 100
-              //var title = response.data.OK.title;
+              //var prob = response.data.OK.probability * 100
+              var title = response.data.OK.title;
               var url = response.data.OK.url
               recommandation = {
                 message:
-                  'This news is not true and with a probability of ' +
-                  prob +
-                  ' It might be because ' +
-                  explanation +
-                  ". I found an article debunking a news similar to yours : <a href='" +
+                  "I found an article debunking a news similar to yours : <br /> Title : <strong>" +
+                  title +
+                  "<br /> Why it's fake : "+
+                    explanation
+                  +
+                  "</strong><br /><a class='link-special' target='_blank' href='" +
                   url +
-                  "'></a>",
+                  "'>Read more</a>",
                 class: 'box sb3'
               }
             }
