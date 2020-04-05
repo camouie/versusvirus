@@ -43,9 +43,11 @@
                                     <p>False news</p>
                                 </div>
                                     <ul class="list" style="text-align: left">
-                                    <li>To be completed
+                                    <li>Selection of fake news from a debunk meta-database (n=144)
                                         <ul class="list" style="text-align: left">
-                                            <li>Reasoning 1</li>
+                                            <li>Myth busters from WHO</li>
+                                            <li>The CoronaVirusFacts/DatosCoronaVirus Alliance Database</li>
+                                            <li>Frequently Asked Questions (FAQs) about the new coronavirus from the Federal Office of Public Health FOPH</li>
                                         </ul>
                                     </li>
                                 </ul>
