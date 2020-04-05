@@ -120,7 +120,21 @@ export default {
 }
 .chatbot-container {
   overflow:scroll;
-  height:420px;
+  height:500px;
+}
+.profile-page .card-profile {
+
+}
+
+.card.card-profile{
+  min-height: 500px !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .profile-page .card-profile {
+    height:100% !important;
+    margin-top: -300px !important;
+  }
 }
 
 .box {
