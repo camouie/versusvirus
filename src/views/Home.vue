@@ -105,7 +105,7 @@
           })
           .then(response => {
             console.log(response)
-            var prob = response.data.OK.probability * 100
+            var prob = parseInt(response.data.OK.probability * 100)
             prob > 90
               ? (this.confidenceMessage = 'very confident')
               : prob > 70
@@ -114,7 +114,7 @@
             var responseToAdd = {
               message:
                 'So...with a probability of ' +
-                response.data.OK.probability * 100 +
+                prob +
                 '%, I can say that I am ' +
                 this.confidenceMessage +
                 ' that it is ' +
