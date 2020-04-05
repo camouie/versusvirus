@@ -24,7 +24,7 @@
                     <div :class="item.class">
                       <p v-html="item.message"></p>
                     </div>
-                    <div v-if="item.id > 1 && item.id < 7">
+                    <div v-if="item.id > 1 && item.id < 6">
                       <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)" />Yes, I did.
 
                       <input type="radio" :name=item.id class="my-radio" v-on:change="nextQuestion(item.id)" />I don't know.
@@ -72,14 +72,13 @@
           { id: 4, message: 'Did you check the author ?', class: 'box sb3' },
           { id: 5, message: 'Did you check the type of media (who is publishing) ?', class: 'box sb3' },
           //{ message : "Did you check date & time ?", class : "chat-bot" },
-          { id: 6, message: 'Did you check the domain name (.com.co // .org //) ?', class: 'box sb3' },
           {
-            id: 7,
+            id: 6,
             message:
               "Thank you. To know more about evaluating news visit our <a class='link-special' href='/guidelines'> Guidelines page</a>.",
             class: 'box sb3'
           },
-          { id: 8, message: 'You can now copy/paste the news you want me to check.', class: 'box sb3' }
+          { id: 7, message: 'You can now copy/paste the news you want me to check.', class: 'box sb3' }
         ],
         inputEnabled: false,
         info: null,
@@ -177,8 +176,8 @@
     },
     watch: {
       cpt() {
-        if (this.cpt == 6) {
-          this.dialog.push(this.botDialogs[7])
+        if (this.cpt == 5) {
+          this.dialog.push(this.botDialogs[6])
           this.inputEnabled = true
         }
       }
