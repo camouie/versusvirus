@@ -35,21 +35,21 @@
                                                         Source
                                                     </template>
                                                     <div style="text-align: left">
-                                                        <p> Taking a critical look at the source, both in and of the news, is the first step</p>
+                                                        <p> Taking a critical look at the source, both in and of the news, is the first step.</p>
                                                         <p> What to check for :</p>
                                                     </div>
                                                     <ul class="list" style="text-align: left">
                                                         <li>Where did the information originate (e.g. WHO World Health Organization)
                                                             <ul class="list" style="text-align: left">
-                                                                <li>Can you successfully do a reverse search for the source</li>
-                                                                <li>Check the web address for errors</li>
-                                                                <li>Check the “About Us” section of source media</li>
+                                                                <li>A reverse search confirms the source</li>
+                                                                <li>The web address is correct</li>
+                                                                <li>The "About us" section of the source media confirms reliability</li>
                                                             </ul>
                                                         </li>
                                                         <li>Sources referred to (a group of researchers vs. a named individual or institution)
                                                             <ul class="list" style="text-align: left">
-                                                                <li>Consider the article's sources and who is quoted</li>
-                                                                <li>Fake news articles often cite anonymous sources</li>
+                                                                <li>In-text references and quotes can be sourced</li>
+                                                                <li>Avoid anonymous sources</li>
                                                             </ul>
                                                         </li>
                                                         <li>How you got access to the information (on Facebook)</li>
@@ -69,8 +69,8 @@
                                                     <ul class="list" style="text-align: left">
                                                         <li>Author names mentioned</li>
                                                         <li>Other references to the same author to confirm credibility</li>
-                                                        <li>Does the author have any professional affiliations, academic or professional credentials</li>
-                                                        <li>Are there other or related publications by the same author</li>
+                                                        <li>Author's professional affiliations, academic or professional credentials</li>
+                                                        <li>Other or related publications by the same author</li>
                                                     </ul>
                                                 </tab-pane>
 
@@ -81,15 +81,15 @@
                                                         Message
                                                     </template>
                                                     <div style="text-align: left">
-                                                        <p>Is the message clear, balanced and unbiased?</p>
+                                                        <p>The message should be clear, balanced and unbiased.</p>
                                                         <p>What to check for :</p>
                                                     </div>
                                                     <ul class="list" style="text-align: left">
                                                         <li>Unsupported or outrageous claims</li>
                                                         <li>A push to share the information</li>
                                                         <li>A lack of quotes, references or contributing sources</li>
-                                                        <li>Avoid headlines that provoke strong emotions</li>
-                                                        <li>Can the story be cross-checked in multiple & reputable sources</li>
+                                                        <li>Headlines that provoke strong emotions</li>
+                                                        <li>Ease of cross-checking in multiple & reputable sources</li>
                                                     </ul>
                                                 </tab-pane>
                                                 <tab-pane key="tab4">
@@ -107,7 +107,7 @@
                                                         <li>Poor grammar</li>
                                                         <li>Incorrect punctuation</li>
                                                         <li>Use of different fonts</li>
-                                                        <li>Entire words/phrases written in capital letters</li>
+                                                        <li>Entire words/phrases written in CAPITAL LETTERS</li>
                                                     </ul>
                                                 </tab-pane>
                                             </card>

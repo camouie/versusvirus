@@ -42,7 +42,6 @@
                                 <div style="text-align: left">
                                     <p>False news</p>
                                 </div>
-
                                     <ul class="list" style="text-align: left">
                                     <li>To be completed
                                         <ul class="list" style="text-align: left">
