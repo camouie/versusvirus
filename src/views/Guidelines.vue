@@ -14,6 +14,9 @@
         <section class="section section-skew">
             <div class="container">
                 <card shadow class="card-profile mt--300" no-body>
+                  <h1>ifuhsdafoiuhwouefw eFOIUWehiofuaz </h1>
+                  <p>fdsuhiufh sdvusdhfhasiu iodsuhfiousad isudhiushad oiuhf
+                   disuhfiusah fisudhfiushd oiushfiousdhafoiu </p>
                     <div class="px-4">
                         <div class="row justify-content-center">
                             <!-- content -->
