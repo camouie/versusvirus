@@ -67,10 +67,10 @@
               "Hello, before checking your news to see whether it's trustable or not, please answer these 4 questions for me.",
             class: 'box sb3'
           },
-          { id: 2, message: 'Did you check the source of information ?', class: 'box sb3' },
-          { id: 3, message: 'Did you check the spelling and grammar ?', class: 'box sb3' },
-          { id: 4, message: 'Did you check the author ?', class: 'box sb3' },
-          { id: 5, message: 'Did you check the type of media (who is publishing) ?', class: 'box sb3' },
+          { id: 2, message: 'Did you check the <span class="bold">source</span> of information ?', class: 'box sb3' },
+          { id: 3, message: 'Did you check the <span class="bold">author</span> ?', class: 'box sb3 bold' },
+          { id: 4, message: 'Did you check the <span class="bold">message</span> ?', class: 'box sb3' },
+          { id: 5, message: 'Did you check the <span class="bold">spelling</span> ?', class: 'box sb3' },
           //{ message : "Did you check date & time ?", class : "chat-bot" },
           {
             id: 6,
