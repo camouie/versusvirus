@@ -5,6 +5,7 @@ import Guidelines from '../views/Guidelines'
 import About from '../views/About'
 import graph_test from '../views/graph_test.vue'
 import AppHeader from "../layout/AppHeader"
+import AppFooter from "../layout/AppFooter"
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,7 @@ const routes = [
     components: {
         header: AppHeader,
         default: Home,
+        footer: AppFooter,
       },
     props : true
   },
@@ -24,6 +26,7 @@ const routes = [
         components: {
             header: AppHeader,
             default: Guidelines,
+            footer: AppFooter,
         }
     },
     {
@@ -32,6 +35,7 @@ const routes = [
         components: {
             header: AppHeader,
             default: About,
+            footer: AppFooter,
         }
     },
   {
@@ -39,7 +43,8 @@ const routes = [
     name: graph_test,
     components: {
         header: AppHeader,
-        default: graph_test
+        default: graph_test,
+        footer: AppFooter,
       },
   },
 ]

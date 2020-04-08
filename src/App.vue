@@ -7,6 +7,7 @@
       <router-link to="/profile">Profile</router-link>
     </div> -->
     <router-view/>
+    <router-view name="footer"></router-view>
   </div>
 </template>
 
