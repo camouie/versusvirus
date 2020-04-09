@@ -20,7 +20,7 @@
               <!-- content -->
               <transition name="fade">
                 <div class="chatbot-container" ref="chatContainer">
-                  <div v-for="item in dialog" v-bind:key="item.message">
+                  <div v-for="item in dialog" v-bind:key="item.id">
                     <div :class="item.class">
                       <p v-html="item.message"></p>
                     </div>
@@ -59,6 +59,7 @@
     data() {
       return {
         cpt: 1,
+        secondCount : 7,
         dialog: [],
         botDialogs: [
           {
@@ -87,7 +88,8 @@
     },
     methods: {
       addMessageToDialog(text) {
-        this.dialog.push(text)
+        this.secondCount += 1;
+        this.dialog.push({id: this.secondCount, message: text.message, class : text.class})
         this.isItFake(text)
       },
       nextQuestion(id) {
@@ -110,7 +112,9 @@
               : prob > 70
               ? (this.confidenceMessage = 'pretty confident')
               : (this.confidenceMessage = 'not very sure')
+            this.secondCount += 1;
             var responseToAdd = {
+              id : this.secondCount,
               message:
                 'So...with a probability of ' +
                 prob +
@@ -137,20 +141,25 @@
           })
           .then(response => {
             console.log(response)
+            debugger;
             var recommandation = {}
+            this.secondCount += 1;
 
             if (Object.prototype.hasOwnProperty.call(response.data.OK, 'false')) {
+              console.log("Nan ? : " + response.data.OK.explanation);
               var text = response.data.OK.false
-              recommandation = { message: text, class: 'box sb3' }
-            } else {
-              var explanation = response.data.OK.explanation
-              //var prob = response.data.OK.probability * 100
+              recommandation = { id : this.secondCount, message: text, class: 'box sb3' }
+            }
+            else {
+              var explanation = response.data.OK.explanation;
               var title = response.data.OK.title;
-              var url = response.data.OK.url
+              var url = response.data.OK.url;
+
               recommandation = {
+                id : this.secondCount,
                 message:
                   "I found an article debunking a news similar to yours : <br /><br /> <div class='bold'>Title :</div> " +
-                  title +
+                  title  +
                   "<br /> <div class='bold'>Why it's fake : </div>"+
                     explanation
                   +
